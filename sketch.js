@@ -36,28 +36,27 @@ function setup() {
 	World.add(world, starBody);
 	
 	Engine.run(engine);
-
+     
 }
 
 
 function draw() {
   background(bgImg);
 
+  
   drawSprites();
 
 }
 
-function keyPressed(LEFT_ARROW) {
-fairy.velocityX=-2;
-}
-
-function keyPressed(RIGHT_ARROW) {
-	fairy.velocityX=2;
-}
-
-function keyPressed(RIGHT_ARROW) {
-	star.velocityY=2;
-}
+function keyPressed() { 
+if(keyCode === RIGHT_ARROW)
+{ fairy.x = fairy.x + 20; } 
+ 
+if(keyCode === LEFT_ARROW)
+{ fairy.x = fairy.x - 20; }
+ 
+if (keyCode === DOWN_ARROW)
+ { Matter.Body.setStatic(starBody,false); } }
 
 
 
